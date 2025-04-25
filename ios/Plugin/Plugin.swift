@@ -14,7 +14,7 @@ public class BluetoothLe: CAPPlugin {
     typealias BleCharacteristic = [String: Any]
     typealias BleDescriptor = [String: Any]
     private var deviceManager: DeviceManager?
-    private var deviceMap = [String: Device]()
+    private var deviceMap = ThreadSafeDictionary<String, Device>()
     private var displayStrings = [String: String]()
 
     override public func load() {
